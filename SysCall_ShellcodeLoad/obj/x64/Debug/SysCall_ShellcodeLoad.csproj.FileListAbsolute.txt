@@ -1,0 +1,7 @@
+C:\Users\whyteedeng\source\repos\SysCall_ShellcodeLoad\SysCall_ShellcodeLoad\bin\x64\Debug\SysCall_ShellcodeLoad.exe.config
+C:\Users\whyteedeng\source\repos\SysCall_ShellcodeLoad\SysCall_ShellcodeLoad\bin\x64\Debug\SysCall_ShellcodeLoad.exe
+C:\Users\whyteedeng\source\repos\SysCall_ShellcodeLoad\SysCall_ShellcodeLoad\bin\x64\Debug\SysCall_ShellcodeLoad.pdb
+C:\Users\whyteedeng\source\repos\SysCall_ShellcodeLoad\SysCall_ShellcodeLoad\obj\x64\Debug\SysCall_ShellcodeLoad.csprojAssemblyReference.cache
+C:\Users\whyteedeng\source\repos\SysCall_ShellcodeLoad\SysCall_ShellcodeLoad\obj\x64\Debug\SysCall_ShellcodeLoad.csproj.CoreCompileInputs.cache
+C:\Users\whyteedeng\source\repos\SysCall_ShellcodeLoad\SysCall_ShellcodeLoad\obj\x64\Debug\SysCall_ShellcodeLoad.exe
+C:\Users\whyteedeng\source\repos\SysCall_ShellcodeLoad\SysCall_ShellcodeLoad\obj\x64\Debug\SysCall_ShellcodeLoad.pdb
