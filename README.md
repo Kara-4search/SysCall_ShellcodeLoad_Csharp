@@ -45,12 +45,21 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 ## Reference link:
 
 1. https://github.com/SolomonSklash/SyscallPOC
+
 2. https://jhalon.github.io/utilizing-syscalls-in-csharp-1/
+
 3. https://jhalon.github.io/utilizing-syscalls-in-csharp-2/
+
 4. https://www.solomonsklash.io/syscalls-for-shellcode-injection.html
+
 5. https://www.pinvoke.net/default.aspx
+
 6. https://github.com/jhalon/SharpCall/blob/master/Syscalls.cs
+
 7. https://github.com/badBounty/directInjectorPOC
+
 8. https://j00ru.vexillium.org/syscalls/nt/64/
-9. [http://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented%20Functions%2FMemory%20Management%2FVirtual%20Memory%2FNtAllocateVirtualMemory.html](http://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented Functions%2FMemory Management%2FVirtual Memory%2FNtAllocateVirtualMemory.html)
-10. http://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented%20Functions%2FMemory%20Management%2FVirtual%20Memory%2FNtAllocateVirtualMemory.html
+
+9. http://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented%20Functions%2FMemory%20Management%2FVirtual%20Memory%2FNtAllocateVirtualMemory.html
+
+   
