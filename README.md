@@ -13,7 +13,7 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 
    1. Use windbg: https://jhalon.github.io/utilizing-syscalls-in-csharp-2/
    2. Check the system call table: https://j00ru.vexillium.org/syscalls/nt/64/
-   3. Find the syscall ID automatically(Working on it)
+   3. Find the syscall ID automatically(50% done)
 
 - You may need to read those posts below **the Reference link** so you could understand how it works.
 - Feel free to make any issues.

@@ -9,6 +9,7 @@ using System.Diagnostics;
 
 namespace SysCall_ShellcodeLoad
 {
+    
     class NativeCode
     {
         public uint NTSTATUS;
@@ -219,6 +220,7 @@ namespace SysCall_ShellcodeLoad
             }
         }
 
+        
         public struct DelegatesStruct
         {
             [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -247,6 +249,8 @@ namespace SysCall_ShellcodeLoad
             public delegate uint NtWaitForSingleObject(IntPtr Object, bool Alertable, uint Timeout);
         }
 
-
+       
     }
+
+   
 }

