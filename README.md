@@ -13,17 +13,20 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 
    1. Use windbg: https://jhalon.github.io/utilizing-syscalls-in-csharp-2/
    2. Check the system call table: https://j00ru.vexillium.org/syscalls/nt/64/
-   3. Find the syscall ID automatically(50% done)
+   3. Find the syscall ID automatically(DONE)
 
 - You may need to read those posts below **the Reference link** so you could understand how it works.
 - Feel free to make any issues.
 
 
 ## Usage
-
-1. Replace the "buf1" with your own shellcode.
+1. I updated the SysCall_ShellcodeLoad, now it's gonna find the syscall ID automatically(Check the file - Auto_NativeCode.cs).
+2. If you want to test the old verison SysCall_ShellcodeLoad，
+	* You just need to remove all the "Auto_NativeCode" from Program.cs 
+	* And Replace the syscall ID with your own.
+3. Replace the "buf1" with your own shellcode.
    ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_buf1.png)
-2. Replace the syscall ID with your own.
+4. Replace the syscall ID with your own.
 - There are three syscall IDs you need to replace.
   1). NtAllocateVirtualMemory
   ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_CUntAVM.png)
