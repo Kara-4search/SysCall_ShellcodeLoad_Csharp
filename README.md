@@ -49,7 +49,8 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
                 0x79, 0x73, 0x63, 0x61, 0x6C, 0x6C, 0x00, 0x41, 0x50, 0x49, 0x20, 0x54, 
                 0x65, 0x73, 0x74, 0x00 
             };
-	original```
+	
+	```
 - You may need to read those posts below **the Reference link** so you could understand how it works.
 - Feel free to make any issues.
 
@@ -70,7 +71,7 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 	- 3). NtWaitForSingleObject
   ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_CUntWFSO.png)
 
- 
+
 ## Reference link:
 
 1. https://github.com/SolomonSklash/SyscallPOC
