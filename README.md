@@ -71,6 +71,14 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 	- 3). NtWaitForSingleObject
   ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_CUntWFSO.png)
 
+## TO-DO list
+
+1. Working on both x64 and x86
+
+2. Make the syscall array more flexible
+
+   
+
 
 ## Reference link:
 
