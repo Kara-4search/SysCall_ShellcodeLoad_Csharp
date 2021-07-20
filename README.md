@@ -27,13 +27,13 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 3. Replace the "buf1" with your own shellcode.
    ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_buf1.png)
 4. Replace the syscall ID with your own.
-- There are three syscall IDs you need to replace.
-  1). NtAllocateVirtualMemory
+* There are three syscall IDs you need to replace.
+	- 1). NtAllocateVirtualMemory
   ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_CUntAVM.png)
-  2). NtCreateThreadEx
+	- 2). NtCreateThreadEx
   ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_CUntCT.png)
-  3). NtWaitForSingleObject
-- ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_CUntWFSO.png)
+	- 3). NtWaitForSingleObject
+  ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_CUntWFSO.png)
 
  
 ## Reference link:
