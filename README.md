@@ -73,7 +73,7 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 
 ## TO-DO list
 
-1. Working on both x64 and x86
+1. ~~Working on both x64 and x86~~
 
 2. Make the syscall array more flexible
 
