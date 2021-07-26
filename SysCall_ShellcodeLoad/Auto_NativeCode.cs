@@ -8,6 +8,48 @@ using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System.Diagnostics;
 
+/*
+	#include <Windows.h>
+	#include <stdio.h>
+	#include <tchar.h>
+	#pragma comment(linker, "/section:.data,RWE")//.data段可执行
+
+	CHAR FuncExample[] = {
+		0x4c,0x8b,0xd1,			  //mov r10,rcx
+		0xb8,0xb9,0x00,0x00,0x00, //mov eax,0B9h
+		0x0f,0x05,				  //syscall
+		0xc3					  //ret
+	};
+
+	typedef NTSTATUS(NTAPI* pNtAllocateVirtualMemory)(//函数指针
+		HANDLE ProcessHandle,
+		PVOID* BaseAddress, 
+		ULONG_PTR ZeroBits, 
+		PSIZE_T RegionSize, 
+		ULONG AllocationType, 
+		ULONG Protect);
+
+
+	DOUBLE GetAndSetSysCall(TCHAR* szFuncName) {
+		DWORD SysCallid = 0;
+		HMODULE hModule = GetModuleHandle(_T("ntdll.dll"));
+		DWORD64 FuncAddr = (DWORD64)GetProcAddress(hModule, (LPCSTR)szFuncName);
+		LPVOID CallAddr = (LPVOID)(FuncAddr + 4);
+		ReadProcessMemory(GetCurrentProcess(), CallAddr, &SysCallid, 4, NULL);
+		memcpy(FuncExample+4, (CHAR*)&SysCallid, 2);
+		return (DOUBLE)SysCallid;
+	}
+
+	int main() {
+		LPVOID Address = NULL;
+		SIZE_T uSize = 0x1000;
+		DOUBLE call = GetAndSetSysCall((TCHAR*)"NtAllocateVirtualMemory");
+		pNtAllocateVirtualMemory NtAllocateVirtualMemory = (pNtAllocateVirtualMemory)&FuncExample;
+		NTSTATUS status = NtAllocateVirtualMemory(GetCurrentProcess(), &Address, 0, &uSize, MEM_COMMIT, PAGE_READWRITE);
+		return 0;
+
+	} 
+*/
 
 namespace SysCall_ShellcodeLoad
 {
@@ -149,19 +191,19 @@ namespace SysCall_ShellcodeLoad
 		}
 
 		public static uint NtCreateThreadEx
-	  (
-		  out IntPtr hThread,
-		  uint DesiredAccess,
-		  IntPtr ObjectAttributes,
-		  IntPtr ProcessHandle,
-		  IntPtr lpStartAddress,
-		  IntPtr lpParameter,
-		  bool CreateSuspended,
-		  uint StackZeroBits,
-		  uint SizeOfStackCommit,
-		  uint SizeOfStackReserve,
-		  IntPtr lpBytesBuffer
-	  )
+	    (
+		    out IntPtr hThread,
+		    uint DesiredAccess,
+		    IntPtr ObjectAttributes,
+		    IntPtr ProcessHandle,
+		    IntPtr lpStartAddress,
+		    IntPtr lpParameter,
+		    bool CreateSuspended,
+		    uint StackZeroBits,
+		    uint SizeOfStackCommit,
+		    uint SizeOfStackReserve,
+		    IntPtr lpBytesBuffer
+	    )
 		{
 			// set byte array of bNtCreateThread to new byte array called syscall
 
