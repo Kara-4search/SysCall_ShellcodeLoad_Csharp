@@ -12,14 +12,10 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 - About how to find the syscall ID on your system, check the link below:
 
    1. Use windbg: https://jhalon.github.io/utilizing-syscalls-in-csharp-2/
-
    2. Check the system call table: https://j00ru.vexillium.org/syscalls/nt/64/
-
    3. Find the syscall ID automatically(DONE)
-
-      - If the AV/EDRs hooked level higher than ntdll, the "Auto_NativeCode" works fine.
-
-      - If the AV/EDRs already hooked some functions in ntdll, in this case the "Auto_NativeCode" is not gonna works, cause "GetModuleHandle" load ntdll from memory, which is actually the hooked version.
+      - If the AV/EDRs hooked level is higher than the NTDLL level, the "Auto_NativeCode" works fine.
+      - If the AV/EDRs already hooked some functions in NTDLL, in this case, the "Auto_NativeCode" is not gonna works, cause "GetModuleHandle" loads NTDLL from memory, which is actually the hooked version.
 
 - Original shellcode is a Message
 	```
