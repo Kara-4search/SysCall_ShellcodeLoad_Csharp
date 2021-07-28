@@ -64,7 +64,7 @@ Github Link: https://github.com/Kara-4search/SysCall_ShellcodeLoad_Csharp
 	* And Replace the syscall ID with your own.
 3. Replace the "buf1" with your own shellcode.
    ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_buf1.png)
-4. Replace the syscall ID with your own.
+4. Replace the syscall ID with your own in NativeCode.cs(Only when you use NativeCode in steal of Auto_NativeCode).
 * There are three syscall IDs you need to replace.
 	- 1). NtAllocateVirtualMemory
   ![avatar](https://raw.githubusercontent.com/Kara-4search/tempPic/main/SysCall_ShellcodeLoad_CUntAVM.png)
